@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.5s ease;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #f0f0f0;
+            /* Light Gray */
+            border-radius: 8px;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+
+        }
+
+        .vertical-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            /* Added text-align for better alignment */
+            border-radius: 50px;
+            width: 280px;
+            height: 430px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: scale(1.05);
+            margin: 0 auto;
+        }
+
+        /* Standardized indentation within <ul> tags */
+        .vertical-card ul {
+            padding-left: 20px;
+        }
+
+        .card1 {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 50px;
+            margin-left: 255px;
+            width: 230px;
+            height: 340px;
+        }
+
+        .card2 {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 50px;
+            margin-left: 85px;
+            width: 230px;
+            height: 330px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        h2 {
+            color: #228b22;
+            /* Forest Green */
+            border-bottom: 2px solid #228b22;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-img {
+    max-width: 300px;
+    height: auto;
+    max-height: 250px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    margin: 10px;
+}
+
+.team-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+        /* Hover Effects */
+        body:hover {
+            background-color: #e0f7fa;
+        }
+
+        section:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <title>About Us | Agrinet</title>
+</head>
+
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <section>
+        <div class="card">
+            <h2>Our Story</h2>
+            <p>Welcome to Your Website AGRINET, where passion for agriculture meets innovation! Founded in 2023, we
+                embarked on a mission to revolutionize the agricultural landscape by creating a platform that addresses
+                the diverse needs of farmers, suppliers, and enthusiasts.</p>
+            <div class="card vertical-card">
+
+                <strong>Our Humble Beginning</strong>
+                <ul>
+                    <li>A group of visionary minds came together with a shared dream to cultivate not just crops but a
+                        future enriched by sustainable agriculture.</li>
+                </ul>
+
+                <ul>
+                    <li>This dream took root and blossomed into Agrinet, a platform that transcends the fields to
+                        empower
+                        farmers and enthusiasts alike.</li>
+                </ul>
+
+                <ul>
+                    <li>Our founders, a blend of tech enthusiasts and seasoned agriculturists, recognized the challenges
+                        faced by farmers in navigating the complexities of modern agriculture.</li>
+                </ul>
+
+                <ul>
+                    <li>The desire to bridge the gap between traditional wisdom and cutting-edge technology ignited the
+                        spark that would become Agrinet.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Our Vision</h2>
+            <p>At Agrinet, we envision a future where agriculture is not just a livelihood but a thriving community
+                connected by shared knowledge, cutting-edge technology, and sustainable practices. Our goal is to
+                empower
+                farmers, streamline processes, and contribute to the growth of a sustainable and resilient agricultural
+                ecosystem.</p>
+        </div>
+
+        <div class="card">
+            <h2>What Drives Us</h2>
+            <div class="row">
+                <div class="card card2">
+                    <strong>Sowing the Seeds of Innovation</strong>
+                    <ul>
+                        <li>Agrinet sprouted with a mission to provide
+                            agricultural guidance that extends beyond the confines of conventional wisdom. </li>
+                    </ul>
+                    <ul>
+                        <li>We envisioned a
+                            platform where farmers could access real-time weather data, receive personalized crop
+                            recommendations, and connect with a community passionate about sustainable farming
+                            practices.</li>
+                    </ul>
+                </div>
+                <div class="card card2">
+                    <strong>Cultivating a Community</strong>
+                    <ul>
+                        <li> As Agrinet flourished, so did our community. Farmers from
+                            diverse backgrounds, united by a common love for the land, began to share their knowledge
+                            and
+                            experiences.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>The Agrinet platform became a thriving marketplace, where users could not only gain
+                            insights into the latest agricultural trends but also buy and sell their produce.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card card1">
+                    <strong>Sustainable Growth, Sustainable Future</strong>
+                    <ul>
+                        <li>Agrinet is not just a platform; it's a
+                            commitment to fostering sustainable agriculture. We believe in the power of innovation to
+                            drive
+                            positive change in farming practices.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>From promoting eco-friendly pest management to encouraging
+                            organic farming, Agrinet stands at the forefront of cultivating a greener, more sustainable
+                            future.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Our Services</h2>
+            <p>At Agrinet, we are dedicated to revolutionizing the agricultural landscape by providing comprehensive
+                guidance and empowering farmers with cutting-edge business solutions. Our range of services is designed
+                to address the unique challenges faced by the agricultural community, fostering growth, sustainability,
+                and prosperity.</p>
+            <div class="row">
+                <div class="card card2"><strong>Integrated Transportation</strong>
+                    <ul>
+                        <li>Seamlessly transport your agricultural products with our transportation solutions.It doesn't
+                            matter if you're a smallholder farmer or a large-scale operation, we tailor our delivery
+                            services to accommodate the scale and nature of your business.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>Whether it's seeds, fertilizers, or equipment, our logistics network ensures that your
+                            agricultural inputs and products reach their destination efficiently.</li>
+                        <ul>
+                </div>
+
+                <div class="card card2"><strong>Crop Management and Advisory</strong>
+                    <ul>
+                        <li>Navigate the complexities of crop management with Agrinet's expert advisory services. Gain
+                            access to real-time weather forecasts, pest and disease alerts, and personalized
+                            recommendations for crop care.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>Also, Crop Management and Advisory services empower farmers with the knowledge and tools
+                            needed to make informed decisions about their crops.
+                    </ul>
+                    </li>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="card card1"><strong>Education and Community Collaboration</strong>
+                    <ul>
+                        <li>Agrinet offers a range of educational resources to equip farmers with the latest practices
+                            and technologies. Also helps to enhance your skills through our accessible and user-friendly
+                            learning platform.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>Agrinet fosters a sense of community among farmers, researchers, and industry experts. Join
+                            forums, share experiences, and collaborate with like-minded individuals.
+                    </ul>
+                    </li>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="card card2"><strong>Precision Farming Technology</strong>
+                    <ul>
+                        <li>
+                            Agrinet consists of techniques like data analytics, and remote sensing which would help you
+                            to Enhance your crop yields, reduce resource wastage, and make informed decisions that drive
+                            efficiency.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>Also, Our team provides support for technology integration, ensuring to maximize the
+                            benefits of our platform for your unique needs.</li>
+                    </ul>
+                </div>
+
+                <div class="card card2"><strong>Marketplace</strong>
+                    <ul>
+                        <li> Explore a diverse marketplace where buying and selling agricultural products is simple,
+                            secure, and convenient.
+                    </ul>
+                    </li>
+                    <ul>
+                        <li>Agrinet facilitates transparent and efficient transactions, helping farmers access broader
+                            markets for their produce while providing businesses with a reliable source of high-quality
+                            agricultural products.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <h2>Meet the Team</h2>
+            <div class="team-members">
+                <img src="Images/p1.jpg" alt="Image 1" class="team-img">
+                <img src="Images/p2.jpg" alt="Image 2" class="team-img">
+                <img src="Images/saif.jpeg" alt="Image 3" class="team-img ">
+                <img src="Images/akshay.jpeg" alt="Image 4" class="team-img">
+                <img src="Images/ojas.jpeg" alt="Image 5" class="team-img">
+            </div>
+        </div>
+        
+        
+        
+        
+
+        <div class="card">
+            <h2>Join Us on this Journey</h2>
+            <p>We invite you to join us on this inspiring journey. Whether you're a seasoned farmer, an agri-preneur, or
+                someone with a passion for sustainable living, Agrinet is your companion in the fields of tomorrow.
+                Together, let's sow the seeds of growth and cultivate a future where agriculture thrives sustainably,
+                and every harvest is a testament to the resilience of the human spirit.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Agrinet: Nurturing Tomorrow's Harvest, Today. All rights reserved.
+    </footer>
+</body>
+
+</html>

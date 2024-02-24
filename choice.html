@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #transport-page, #products-page {
+            display: none;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.getElementById('transport-page').style.display = 'none';
+            document.getElementById('products-page').style.display = 'none';
+            document.getElementById('Home-page').style.display = 'none';
+
+            // Show the selected page
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Explore Agricultural Options</h1>
+    <button onclick="showPage('transport-page')"><a href="transportfor.html" style="color: inherit; text-decoration: none;">Transport</a></button>
+    <button onclick="showPage('products-page')"><a href="productscat.html" style="color: inherit; text-decoration: none;">Products</a></button>
+    <button onclick="showPage('Home-page')"><a href="index.html" style="color: inherit; text-decoration: none;">Go To Home</a></button>
+</body>
+</html>

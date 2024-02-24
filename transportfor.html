@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Transport Vehicle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f7f7f7;
+        }
+
+        h2 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add New Transport Vehicle</h2>
+    <form id="addVehicleForm">
+        <label for="vehicleType">Vehicle Type:</label>
+        <input type="text" id="vehicleType" name="vehicleType" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="goodsTransported">Goods Transported:</label>
+        <input type="number" id="goodsTransported" name="goodsTransported" required>
+
+        <button type="button" onclick="addVehicle(transport.html)">Add Vehicle</button>
+    </form>
+
+    <script>
+        function addVehicle() {
+            var vehicleType = document.getElementById("vehicleType").value;
+            var location = document.getElementById("location").value;
+            var goodsTransported = document.getElementById("goodsTransported").value;
+
+            // Create a new row in the table
+            var table = window.opener.document.getElementById("transportTableBody");
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            // Populate the new row with data
+            cell1.innerHTML = vehicleType;
+            cell2.innerHTML = location;
+            cell3.innerHTML = goodsTransported;
+            cell4.innerHTML = "Pending"; // Assuming "Status" is always "Pending"
+
+            // Clear the form fields
+            document.getElementById("addVehicleForm").reset();
+        }
+    </script>
+</body>
+</html>

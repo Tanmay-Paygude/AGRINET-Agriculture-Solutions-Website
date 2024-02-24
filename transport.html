@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+        <title>Transport Facility | Your Website Name</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Transport Facility</h1>
+        </header>
+
+        <section>
+            <h2>Transport Vehicles</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vehicle Type</th>
+                        <th>Location</th>
+                        <th>Goods Transported</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="transportTableBody">
+                    <!-- Table rows will be dynamically added here using JavaScript -->
+                </tbody>
+            </table>
+            
+
+        </section>
+
+        <script>
+            // JavaScript for adding a new transport vehicle
+            function addVehicle() {
+                var vehicleID = document.getElementById("vehicleType").value;
+                var location = document.getElementById("location").value;
+                var goodsTransported = document.getElementById("goodsTransported").value;
+                var goodsTransported = document.getElementById("Status").value;
+                
+                // Create a new row in the table
+                var table = document.getElementById("transportTableBody");
+                var newRow = table.insertRow(table.rows.length);
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                var cell3 = newRow.insertCell(2);
+                var cell4 = newRow.insertCell(3);
+            
+            // Populate the new row with data
+            cell1.innerHTML = vehicleID;
+            cell2.innerHTML = location;
+            cell3.innerHTML = goodsTransported;
+            cell4.innerHTML = Status;
+            
+            // Clear the form fields
+            document.getElementById("addVehicleForm").reset();
+        }
+    </script>
+    </body>
+
+    <footer>
+        &copy; 2023 Your Website Name. All rights reserved.
+    </footer>
+
+</html>
