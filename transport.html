@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Vehicles</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1em;
+        }
+
+        .category {
+            width: 70%;
+            background-color: #fff;
+            margin: 1em;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .vehicle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .vehicle {
+            width: 20%;
+            background-color: #fff;
+            margin: 1em;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .vehicle:hover {
+            transform: scale(1.05);
+        }
+
+        .vehicle img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .vehicle p.price {
+            color: #3498db;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+        #search-bar {
+            margin: 1em;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 50%;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 2em auto;
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5em 0;
+        }
+
+        form input, form select {
+            width: calc(100% - 1em);
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: white;
+            padding: 0.7em 1.5em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transport Vehicles</h1>
+        <input type="text" id="search-bar" placeholder="Search vehicles...">
+    </header>
+
+    <form id="vehicle-form">
+        <label for="vehicle-name">Vehicle Name:</label>
+        <input type="text" id="vehicle-name" name="vehicle-name" required>
+        
+        <label for="vehicle-description">Description:</label>
+        <input type="text" id="vehicle-description" name="vehicle-description" required>
+
+        <label for="vehicle-price">Price:</label>
+        <input type="number" id="vehicle-price" name="vehicle-price" required>
+
+        <label for="vehicle-image">Image:</label>
+        <input type="file" id="vehicle-image" name="vehicle-image" accept="image/*" required>
+
+        <label for="vehicle-category">Category:</label>
+        <select id="vehicle-category" name="vehicle-category" required>
+            <option value="land-transport">Land Transport</option>
+            <option value="air-transport">Air Transport</option>
+            <option value="water-transport">Water Transport</option>
+        </select>
+
+        <button type="submit">Add Vehicle</button>
+    </form>
+
+    <section id="vehicle-section">
+        <div class="category" id="land-transport">
+            <h2>Land Transport</h2>
+            <div class="vehicle-container">
+                <!-- Existing vehicles go here -->
+            </div>
+        </div>
+
+        <div class="category" id="air-transport">
+            <h2>Air Transport</h2>
+            <div class="vehicle-container">
+                <!-- Existing vehicles go here -->
+            </div>
+        </div>
+
+        <div class="category" id="water-transport">
+            <h2>Water Transport</h2>
+            <div class="vehicle-container">
+                <!-- Existing vehicles go here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Transport Solutions. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('vehicle-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var vehicleName = document.getElementById('vehicle-name').value;
+            var vehicleDescription = document.getElementById('vehicle-description').value;
+            var vehiclePrice = document.getElementById('vehicle-price').value;
+            var vehicleImage = document.getElementById('vehicle-image').files[0];
+            var vehicleCategory = document.getElementById('vehicle-category').value;
+    
+            // Create a FileReader to read the uploaded image
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var vehicleContainer = document.querySelector(`#${vehicleCategory} .vehicle-container`);
+                var newVehicle = document.createElement('div');
+                newVehicle.className = 'vehicle';
+                newVehicle.innerHTML = `
+                    <img src="${e.target.result}" alt="${vehicleName}">
+                    <h3>${vehicleName}</h3>
+                    <p>${vehicleDescription}</p>
+                    <p class="price">Price: $${vehiclePrice}</p>
+                    <button class="book-button">Book</button>
+                `;
+                vehicleContainer.appendChild(newVehicle);
+    
+                // Attach event listener to the book button
+                newVehicle.querySelector('.book-button').addEventListener('click', function() {
+                    var confirmation = confirm(`Are you sure you want to book ${vehicleName} for $${vehiclePrice}?`);
+                    if (confirmation) {
+                        alert(`You have successfully booked ${vehicleName} for $${vehiclePrice}!`);
+                    }
+                });
+            };
+            reader.readAsDataURL(vehicleImage);
+    
+            // Clear the form
+            document.getElementById('vehicle-form').reset();
+        });
+    
+        document.getElementById('search-bar').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let vehicles = document.querySelectorAll('.vehicle');
+    
+            vehicles.forEach(function(vehicle) {
+                let vehicleName = vehicle.querySelector('h3').textContent.toLowerCase();
+                if (vehicleName.includes(filter)) {
+                    vehicle.style.display = '';
+                } else {
+                    vehicle.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
